@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:base_project/config/theme_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 PreferredSizeWidget appBarCustom(
     {String title,
@@ -15,7 +14,7 @@ PreferredSizeWidget appBarCustom(
     Widget actionWidget = const SizedBox()}) {
   return AppBar(
     elevation: 0,
-    toolbarHeight: kToolbarHeight.sp,
+    toolbarHeight: kToolbarHeight,
     centerTitle: false,
     automaticallyImplyLeading: false,
     title: Theme(
@@ -26,7 +25,7 @@ PreferredSizeWidget appBarCustom(
           Visibility(
             visible: isShowBack,
             child: Padding(
-              padding: EdgeInsets.only(right: 10.sp),
+              padding: EdgeInsets.only(right: 10),
               child: InkWell(
                   onTap: () {
                     actionBack.call();
@@ -36,7 +35,7 @@ PreferredSizeWidget appBarCustom(
                     style: TextStyle(
                       inherit: false,
                       color: theme.getThemeState() == ThemeState.dark ? Colors.white : Colors.black,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: Icons.arrow_back_ios_rounded.fontFamily,
                       package: Icons.arrow_back_ios_rounded.fontPackage,
@@ -52,7 +51,7 @@ PreferredSizeWidget appBarCustom(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: fontSize.sp,
+                      fontSize: fontSize,
                       color: theme.getThemeState() == ThemeState.dark ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                     ),

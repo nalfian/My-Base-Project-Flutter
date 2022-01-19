@@ -4,8 +4,6 @@ import 'package:base_project/config/color_config.dart';
 import 'package:base_project/config/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class HistoryScreen extends StatefulWidget {
   static const String routeName = '/history-screen';
   final ScrollController controller;
@@ -41,15 +39,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
       itemCount: 3,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 16.sp),
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 40.sp,
-                width: 40.sp,
-                margin: EdgeInsets.only(right: 16.sp),
+                height: 40,
+                width: 40,
+                margin: EdgeInsets.only(right: 16),
                 decoration: BoxDecoration(
                   color: ColorConfig.accent,
                   shape: BoxShape.circle,
@@ -67,19 +65,19 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         Expanded(
                           child: Text(
                             "Kiwae Ayam kekinian Nologaten",
-                            style: TextStyle(fontSize: 14.sp),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ),
-                        SizedBox(width: 16.sp),
+                        SizedBox(width: 16),
                         Text(
                           "Rp32.720",
-                          style: TextStyle(fontSize: 14.sp),
+                          style: TextStyle(fontSize: 14),
                         ),
                       ],
                     ),
                     Text(
                       "17 Jan 2022, 19:33",
-                      style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
                     ),
                   ],
                 ),

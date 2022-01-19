@@ -6,7 +6,6 @@ import 'package:base_project/screen/home_screen/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class HomeNavigation extends StatefulWidget {
@@ -80,8 +79,8 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
     return Container(
       decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.grey.withOpacity(0.5), width: 1))),
       child: BottomNavigationBar(
-          selectedFontSize: 10.sp,
-          unselectedFontSize: 10.sp,
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
           backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
           unselectedItemColor: Colors.grey.withOpacity(0.5),
           selectedItemColor: ColorConfig.accent,

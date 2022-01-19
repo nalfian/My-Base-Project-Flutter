@@ -4,7 +4,6 @@ import 'package:base_project/config/theme_manager.dart';
 import 'package:base_project/screen/home_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -37,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
               'Base Project',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 30.sp,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
