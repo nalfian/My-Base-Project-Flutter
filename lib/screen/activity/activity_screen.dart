@@ -35,9 +35,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                         style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
-                            color: theme.getThemeState() == ThemeState.dark
-                                ? ColorConfig.lightPrimary
-                                : ColorConfig.accentLightPrimary),
+                            color: ColorConfig.accent),
                       ),
                     )),
                 body: body(context, theme))));
@@ -59,7 +57,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                 width: 40.sp,
                 margin: EdgeInsets.only(right: 16.sp),
                 decoration: BoxDecoration(
-                  color: ColorConfig.accentBgLightPrimary,
+                  color: ColorConfig.accent,
                   shape: BoxShape.circle,
                 ),
               ),

@@ -54,11 +54,9 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
   Widget build(BuildContext context) {
     return SafeArea(
         child: Consumer<ThemeManager>(
-            builder: (context, theme, child) =>
-                Scaffold(
-                    bottomNavigationBar: SizeTransition(
-                        sizeFactor: animationController, axisAlignment: -1, child: menuBottom(theme)),
-                    body: body(context, theme))));
+            builder: (context, theme, child) => Scaffold(
+                bottomNavigationBar: SizeTransition(sizeFactor: animationController, axisAlignment: -1, child: menuBottom(theme)),
+                body: body(context, theme))));
   }
 
   Widget body(BuildContext context, ThemeManager theme) {
@@ -76,13 +74,13 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
 
   Widget menuBottom(ThemeManager theme) {
     return Container(
-      decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1))),
+      decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.grey.withOpacity(0.5), width: 1))),
       child: BottomNavigationBar(
           selectedFontSize: 10.sp,
           unselectedFontSize: 10.sp,
           backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.accentLightPrimary,
+          unselectedItemColor: Colors.grey.withOpacity(0.5),
+          selectedItemColor: ColorConfig.accent,
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           //New

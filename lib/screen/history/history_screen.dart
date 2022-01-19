@@ -48,7 +48,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 width: 40.sp,
                 margin: EdgeInsets.only(right: 16.sp),
                 decoration: BoxDecoration(
-                  color: ColorConfig.accentBgLightPrimary,
+                  color: ColorConfig.accent,
                   shape: BoxShape.circle,
                 ),
               ),

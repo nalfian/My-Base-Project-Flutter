@@ -49,7 +49,7 @@ class ThemeManager with ChangeNotifier {
   ThemeManager() {
     SchedulerBinding.instance?.window?.onPlatformBrightnessChanged = () {
       final isDark = SchedulerBinding.instance.window.platformBrightness == Brightness.dark;
-      print('Dark '+isDark.toString());
+      print('Dark ' + isDark.toString());
       setDefaultTheme();
     };
     setDefaultTheme();
@@ -60,9 +60,9 @@ class ThemeManager with ChangeNotifier {
     _themeState = isDarkMode ? ThemeState.dark : ThemeState.light;
     _themeData = isDarkMode ? darkTheme : lightTheme;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: isDarkMode? ColorConfig.darkPrimary : Colors.white,
-      statusBarIconBrightness: Brightness.dark,
-      systemNavigationBarIconBrightness: Brightness.dark,
+      statusBarColor: isDarkMode ? ColorConfig.darkPrimary : Colors.white,
+      statusBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
+      systemNavigationBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
     ));
     notifyListeners();
   }
