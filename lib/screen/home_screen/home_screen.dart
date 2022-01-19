@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Consumer<ThemeManager>(builder: (context, theme, child) => Scaffold(body: body(context, theme))));
+    return Consumer<ThemeManager>(builder: (context, theme, child) => Scaffold(body: body(context, theme)));
   }
 
   Widget body(BuildContext context, ThemeManager theme) {

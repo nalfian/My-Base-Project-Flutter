@@ -1,4 +1,5 @@
 import 'package:base_project/component/app_bar/app_bar_custom.dart';
+import 'package:base_project/component/safe_area/safe_area_custom.dart';
 import 'package:base_project/config/color_config.dart';
 import 'package:base_project/config/theme_manager.dart';
 import 'package:flutter/material.dart';
@@ -18,18 +19,20 @@ class HistoryScreen extends StatefulWidget {
 class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Consumer<ThemeManager>(
-            builder: (context, theme, child) => Scaffold(
-                appBar: appBarCustom(
-                    title: 'Riwayatku',
-                    isShowBack: true,
-                    actionBack: () {
-                      Navigator.pop(context);
-                    },
-                    context: context,
-                    theme: theme),
-                body: body(context, theme))));
+    return Consumer<ThemeManager>(
+        builder: (context, theme, child) => SafeAreaCustom(
+              theme: theme,
+              child: Scaffold(
+                  appBar: appBarCustom(
+                      title: 'Riwayatku',
+                      isShowBack: true,
+                      actionBack: () {
+                        Navigator.pop(context);
+                      },
+                      context: context,
+                      theme: theme),
+                  body: body(context, theme)),
+            ));
   }
 
   Widget body(BuildContext context, ThemeManager theme) {

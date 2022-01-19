@@ -15,6 +15,7 @@ PreferredSizeWidget appBarCustom(
     Widget actionWidget = const SizedBox()}) {
   return AppBar(
     elevation: 0,
+    toolbarHeight: kToolbarHeight.sp,
     centerTitle: false,
     automaticallyImplyLeading: false,
     title: Theme(
@@ -35,7 +36,7 @@ PreferredSizeWidget appBarCustom(
                     style: TextStyle(
                       inherit: false,
                       color: theme.getThemeState() == ThemeState.dark ? Colors.white : Colors.black,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                       fontFamily: Icons.arrow_back_ios_rounded.fontFamily,
                       package: Icons.arrow_back_ios_rounded.fontPackage,

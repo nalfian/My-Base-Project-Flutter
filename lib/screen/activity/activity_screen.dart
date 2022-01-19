@@ -18,27 +18,26 @@ class ActivityScreen extends StatefulWidget {
 class _ActivityScreenState extends State<ActivityScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Consumer<ThemeManager>(
-            builder: (context, theme, child) => Scaffold(
-                appBar: appBarCustom(
-                    title: 'Aktivitasku',
-                    fontSize: 28,
-                    context: context,
-                    theme: theme,
-                    actionWidget: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, HistoryScreen.routeName);
-                      },
-                      child: Text(
-                        "Riwayat",
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            color: ColorConfig.accent),
-                      ),
-                    )),
-                body: body(context, theme))));
+    return Consumer<ThemeManager>(
+        builder: (context, theme, child) => Scaffold(
+            appBar: appBarCustom(
+                title: 'Aktivitasku',
+                fontSize: 28.sp,
+                context: context,
+                theme: theme,
+                actionWidget: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, HistoryScreen.routeName);
+                  },
+                  child: Text(
+                    "Riwayat",
+                    style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: ColorConfig.accent),
+                  ),
+                )),
+            body: body(context, theme)));
   }
 
   Widget body(BuildContext context, ThemeManager theme) {

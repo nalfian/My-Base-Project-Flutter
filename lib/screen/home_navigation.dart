@@ -1,3 +1,4 @@
+import 'package:base_project/component/safe_area/safe_area_custom.dart';
 import 'package:base_project/config/color_config.dart';
 import 'package:base_project/config/theme_manager.dart';
 import 'package:base_project/screen/activity/activity_screen.dart';
@@ -52,11 +53,14 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Consumer<ThemeManager>(
-            builder: (context, theme, child) => Scaffold(
-                bottomNavigationBar: SizeTransition(sizeFactor: animationController, axisAlignment: -1, child: menuBottom(theme)),
-                body: body(context, theme))));
+    return Consumer<ThemeManager>(
+        builder: (context, theme, child) => SafeAreaCustom(
+              theme: theme,
+              child: Scaffold(
+                  bottomNavigationBar:
+                      SizeTransition(sizeFactor: animationController, axisAlignment: -1, child: menuBottom(theme)),
+                  body: body(context, theme)),
+            ));
   }
 
   Widget body(BuildContext context, ThemeManager theme) {
