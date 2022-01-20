@@ -21,6 +21,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         builder: (context, theme, child) => SafeAreaCustom(
               theme: theme,
               child: Scaffold(
+                  backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : Colors.white,
                   appBar: appBarCustom(
                       title: 'Riwayatku',
                       isShowBack: true,

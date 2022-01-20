@@ -17,49 +17,46 @@ PreferredSizeWidget appBarCustom(
     toolbarHeight: kToolbarHeight,
     centerTitle: false,
     automaticallyImplyLeading: false,
-    title: Theme(
-      data: Theme.of(context).copyWith(accentColor: Colors.white),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Visibility(
-            visible: isShowBack,
-            child: Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: InkWell(
-                  onTap: () {
-                    actionBack.call();
-                  },
-                  child: Text(
-                    String.fromCharCode(Icons.arrow_back_ios_rounded.codePoint),
-                    style: TextStyle(
-                      inherit: false,
-                      color: theme.getThemeState() == ThemeState.dark ? Colors.white : Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: Icons.arrow_back_ios_rounded.fontFamily,
-                      package: Icons.arrow_back_ios_rounded.fontPackage,
-                    ),
-                  )),
-            ),
-          ),
-          Expanded(
-            child: titleImage != null
-                ? Align(alignment: Alignment.centerLeft, child: titleImage)
-                : AutoSizeText(
-                    '$title',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: fontSize,
-                      color: theme.getThemeState() == ThemeState.dark ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Visibility(
+          visible: isShowBack,
+          child: Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: InkWell(
+                onTap: () {
+                  actionBack.call();
+                },
+                child: Text(
+                  String.fromCharCode(Icons.arrow_back_ios_rounded.codePoint),
+                  style: TextStyle(
+                    inherit: false,
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: Icons.arrow_back_ios_rounded.fontFamily,
+                    package: Icons.arrow_back_ios_rounded.fontPackage,
                   ),
+                )),
           ),
-          actionWidget
-        ],
-      ),
+        ),
+        Expanded(
+          child: titleImage != null
+              ? Align(alignment: Alignment.centerLeft, child: titleImage)
+              : AutoSizeText(
+                  '$title',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+        ),
+        actionWidget
+      ],
     ),
     bottom: bottom,
   );

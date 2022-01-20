@@ -1,5 +1,6 @@
 import 'package:base_project/component/safe_area/safe_area_custom.dart';
 import 'package:base_project/config/color_config.dart';
+import 'package:base_project/config/size_config.dart';
 import 'package:base_project/config/theme_manager.dart';
 import 'package:base_project/screen/activity/activity_screen.dart';
 import 'package:base_project/screen/home_screen/home_screen.dart';
@@ -52,6 +53,7 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Consumer<ThemeManager>(
         builder: (context, theme, child) => SafeAreaCustom(
               theme: theme,
@@ -81,9 +83,9 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
       child: BottomNavigationBar(
           selectedFontSize: 10,
           unselectedFontSize: 10,
-          backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
-          selectedItemColor: ColorConfig.accent,
+          backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : Colors.white,
+          unselectedItemColor:  theme.getThemeState() == ThemeState.dark ? Colors.grey.withOpacity(0.5) : Colors.grey,
+          selectedItemColor: theme.getThemeState() == ThemeState.dark ? Colors.white : ColorConfig.accent,
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           //New
@@ -98,8 +100,8 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
               label: 'Aktivitas',
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.chat_bubble_2),
-              label: 'Pesan',
+              icon: Icon(CupertinoIcons.suit_heart),
+              label: 'Favorit',
             ),
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.profile_circled), label: 'Akun')
           ]),
@@ -110,7 +112,7 @@ class _HomeNavigationState extends State<HomeNavigation> with SingleTickerProvid
     _pages = <Widget>[
       HomeScreen(controller: controller),
       ActivityScreen(controller: controller2),
-      Icon(Icons.chat, size: 150),
+      Icon(Icons.star, size: 150),
       Icon(Icons.camera, size: 150)
     ];
   }

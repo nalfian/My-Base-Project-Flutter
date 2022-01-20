@@ -19,6 +19,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
   Widget build(BuildContext context) {
     return Consumer<ThemeManager>(
         builder: (context, theme, child) => Scaffold(
+            backgroundColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : Colors.white,
             appBar: appBarCustom(
                 title: 'Aktivitasku',
                 fontSize: 28,

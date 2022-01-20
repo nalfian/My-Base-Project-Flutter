@@ -12,12 +12,11 @@ class ThemeManager with ChangeNotifier {
     fontFamily: GoogleFonts.poppins().fontFamily,
     primarySwatch: Colors.grey,
     primaryColor: ColorConfig.darkPrimary,
-    scaffoldBackgroundColor: ColorConfig.darkPrimary,
     brightness: Brightness.dark,
-    backgroundColor: const Color(0xFF212121),
+    backgroundColor: ColorConfig.backgroundDark,
+    scaffoldBackgroundColor: ColorConfig.backgroundDark,
     accentColor: Colors.white,
     unselectedWidgetColor: Colors.white,
-    canvasColor: ColorConfig.darkPrimary,
     accentIconTheme: IconThemeData(color: Colors.black),
     dividerColor: Colors.black12,
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -29,10 +28,9 @@ class ThemeManager with ChangeNotifier {
     primaryColor: ColorConfig.lightPrimary,
     brightness: Brightness.light,
     unselectedWidgetColor: Colors.white,
-    backgroundColor: const Color(0xFFE5E5E5),
-    accentColor: const Color(0xFF004B84),
-    scaffoldBackgroundColor: ColorConfig.lightPrimary,
-    canvasColor: ColorConfig.lightPrimary,
+    backgroundColor: ColorConfig.backgroundLight,
+    scaffoldBackgroundColor: ColorConfig.backgroundLight,
+    accentColor: ColorConfig.accent,
     accentIconTheme: IconThemeData(color: Colors.white),
     dividerColor: Colors.white54,
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -60,9 +58,7 @@ class ThemeManager with ChangeNotifier {
     _themeState = isDarkMode ? ThemeState.dark : ThemeState.light;
     _themeData = isDarkMode ? darkTheme : lightTheme;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: isDarkMode ? ColorConfig.darkPrimary : Colors.white,
-      statusBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
-      systemNavigationBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
+      statusBarColor: isDarkMode ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
     ));
     notifyListeners();
   }

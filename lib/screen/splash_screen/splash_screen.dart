@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         },
         child: Center(
           child: Shimmer.fromColors(
-            baseColor: ColorConfig.accent,
+            baseColor: Colors.white,
             highlightColor: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
             child: Text(
               'Base Project',

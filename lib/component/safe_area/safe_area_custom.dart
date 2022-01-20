@@ -11,7 +11,14 @@ class SafeAreaCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [
+          0.5,
+          0.5
+        ], colors: <Color>[
+          theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : ColorConfig.lightPrimary,
+          theme.getThemeState() == ThemeState.dark ? ColorConfig.darkPrimary : Colors.white
+        ])),
         child: SafeArea(child: child));
   }
 }
